@@ -91,3 +91,6 @@ def test_sql_parameterization(client):
 
 def test_body_limit(client):
     assert client.post('/api/shorten', data='x' * 9000, content_type='application/json').status_code == 413
+
+
+print("All tests passed!")
