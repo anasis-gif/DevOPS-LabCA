@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shortly · DevOps URL Shortener</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <header><a href="/" class="brand">shortly<span>↗</span></a><span class="badge">DEVOPS LAB / CA</span></header>
+  <main>
+    <p class="eyebrow">SMALL LINKS. SIMPLE SHARING.</p>
+    <h1>A shorter link.<br>A smoother journey.</h1>
+    <p class="intro">Turn a long web address into a link that’s easy to copy, share, and remember.</p>
+    <section class="card" aria-label="Create a short link">
+      <form id="shorten-form">
+        <label for="url">Your destination URL</label>
+        <div class="input-row"><input id="url" name="url" type="url" required maxlength="2048" placeholder="https://example.com/your-long-link"><button id="submit" type="submit">Shorten link ↗</button></div>
+        <p class="hint">HTTP and HTTPS links supported.</p>
+      </form>
+      <p id="message" role="status" aria-live="polite"></p>
+      <div id="result" hidden><span class="result-label">YOUR SHORT LINK</span><div class="input-row"><a id="short-link" target="_blank" rel="noopener"></a><button id="copy" type="button">Copy link</button></div></div>
+    </section>
+    <div class="features"><p><strong>01 / Paste</strong><span>Add your original web address.</span></p><p><strong>02 / Shorten</strong><span>Create a unique, compact link.</span></p><p><strong>03 / Share</strong><span>Copy it and send it anywhere.</span></p></div>
+  </main>
+  <footer><span>Built with Flask · Docker · GitHub Actions</span><span>Anas · Saad · Ruhan</span></footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+name: devops-url-shortener-production
+services:
+  web:
+    image: ${IMAGE:?Set IMAGE to a commit-specific GHCR tag}
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:?Set the public service URL}
+      DATABASE: /data/links.db
+    volumes:
+      - links-data:/data
+    restart: unless-stopped
+volumes:
+  links-data:

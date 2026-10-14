@@ -1,0 +1,14 @@
+.venv/
+.env
+.env.*
+!.env.example
+.ssh/
+data/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.db
+*.db-wal
+*.db-shm
+*.pem
+*.key

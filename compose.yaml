@@ -1,0 +1,14 @@
+name: devops-url-shortener
+services:
+  web:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:8000}
+      DATABASE: /data/links.db
+    volumes:
+      - links-data:/data
+    restart: unless-stopped
+volumes:
+  links-data:
